@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Husinka – salonek pro hlazení a husí kůži</title>
+<meta name="description" content="Klidný salonek v soukromí. Pomalé hlazení, šimrání a husí kůže místo klasické masáže.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;1,6..72,300&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sage:#E3E9E1; --mist:#F6F7F3; --dusk:#33415C; --apricot:#F0CDB8;
+    --text:#26324A; --muted:#5E6A7E;
+    --font:"Newsreader", Georgia, "Times New Roman", serif;
+  }
+  *{box-sizing:border-box;margin:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);background:var(--mist);color:var(--text);line-height:1.7;font-size:1.15rem;font-weight:300}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--dusk);outline-offset:4px;border-radius:3px}
+  .wrap{max-width:60rem;margin:0 auto;padding:0 1.5rem}
+
+  header{position:relative;background:var(--sage);min-height:88vh;display:flex;flex-direction:column;overflow:hidden}
+  canvas{position:absolute;inset:0;width:100%;height:100%}
+  nav{position:relative;display:flex;justify-content:space-between;align-items:baseline;padding:1.5rem 0}
+  .logo{font-style:italic;font-size:1.5rem;text-decoration:none}
+  nav a.book{text-decoration:none;border-bottom:1px solid currentColor}
+  .hero{position:relative;margin:auto 0;padding:3rem 0 5rem;pointer-events:none}
+  .hero h1{font-weight:300;font-size:clamp(2.5rem,7.5vw,5rem);line-height:1.05;letter-spacing:-.015em;max-width:14ch}
+  .hero p{max-width:30rem;margin-top:1.4rem;color:var(--muted)}
+  .hero a{pointer-events:auto;display:inline-block;margin-top:2rem;background:var(--dusk);color:var(--mist);text-decoration:none;padding:.8rem 1.5rem;border-radius:2rem;font-weight:500}
+  .hint{position:relative;font-style:italic;color:var(--muted);font-size:.95rem;padding-bottom:1.5rem}
+
+  section{padding:5rem 0}
+  h2{font-weight:300;font-size:clamp(1.9rem,4.5vw,2.8rem);line-height:1.1;margin-bottom:1.25rem;max-width:18ch}
+  .lead{max-width:36rem;color:var(--muted)}
+
+  .offers{margin-top:2.5rem;display:grid;gap:2.5rem;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr))}
+  .offer h3{font-weight:500;font-size:1.35rem}
+  .offer .meta{font-style:italic;color:var(--muted);margin:.2rem 0 .6rem}
+  .offer .price{display:block;margin-top:.8rem;font-weight:500;font-size:1.3rem}
+
+  .quiet{background:var(--apricot)}
+  .quiet .cols{display:grid;gap:2.5rem;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr))}
+  .quiet ul{padding-left:1.1rem;display:grid;gap:.5rem}
+
+  .contact{background:var(--dusk);color:var(--mist)}
+  .contact .lead{color:#C9D0DC}
+  .contact dl{margin-top:2rem;display:grid;gap:1.5rem}
+  .contact dt{font-style:italic;color:#C9D0DC;font-size:1rem}
+  .contact dd{font-size:clamp(1.3rem,4vw,1.8rem)}
+  .contact dd a{text-decoration:none;border-bottom:1px solid var(--apricot)}
+  footer{background:#2A3650;color:#AEB7C6;padding:1.5rem 0;font-size:.95rem}
+</style>
+</head>
+<body>
+<header>
+  <canvas id="skin" aria-hidden="true"></canvas>
+  <div class="wrap" style="position:relative;display:flex;flex-direction:column;flex:1">
+    <nav>
+      <a class="logo" href="#">Husinka</a>
+      <a class="book" href="#kontakt">Objednat se</a>
+    </nav>
+    <div class="hero">
+      <h1>Pomalé hlazení, až naskočí husí kůže.</h1>
+      <p>Salonek v soukromí pro ty, kdo místo masáže chtějí něžný dotek. Konečky prstů, pírka a štětečky, bez spěchu a v klidu.</p>
+      <a href="#kontakt">Domluvit termín</a>
+    </div>
+    <p class="hint">Přejeďte prstem nebo myší přes pozadí.</p>
+  </div>
+</header>
+
+<main>
+  <section id="nabidka">
+    <div class="wrap">
+      <h2>Co nabízíme</h2>
+      <p class="lead">Každé sezení začíná krátkým rozhovorem, kde se domluvíme, kde a jak se vás můžeme dotýkat.</p>
+      <div class="offers">
+        <div class="offer">
+          <h3>Záda a ramena</h3><p class="meta">45 minut</p>
+          <p>Pomalé tahy konečky prstů a nehty po zádech, lopatkách a šíji.</p>
+          <span class="price">1 100 Kč</span>
+        </div>
+        <div class="offer">
+          <h3>Celé tělo</h3><p class="meta">75 minut</p>
+          <p>Ruce, paže, záda, nohy i chodidla. Střídání prstů, peří a měkkých štětců.</p>
+          <span class="price">1 800 Kč</span>
+        </div>
+        <div class="offer">
+          <h3>Tiché sezení</h3><p class="meta">60 minut</p>
+          <p>Bez mluvení, s tlumeným světlem a klidnou hudbou. Jen dotek a dech.</p>
+          <span class="price">1 500 Kč</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quiet" id="pravidla">
+    <div class="wrap cols">
+      <div>
+        <h2>Jak to u nás chodí</h2>
+        <p>Přijdete, převléknete se do pohodlného a lehnete si. Intenzitu, tempo i místa dotyků můžete kdykoli změnit – stačí říct.</p>
+      </div>
+      <ul>
+        <li>Pouze pro osoby starší 18 let.</li>
+        <li>Vše předem domluvené, sezení lze kdykoli ukončit.</li>
+        <li>Čisté ručníky, prostěradla a pomůcky pro každého.</li>
+        <li>Diskrétní prostředí, adresa až po potvrzení termínu.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="contact" id="kontakt">
+    <div class="wrap">
+      <h2>Domluvte si termín</h2>
+      <p class="lead">Napište nebo zavolejte, ozveme se obvykle do několika hodin.</p>
+      <dl>
+        <div><dt>Telefon a WhatsApp</dt><dd><a href="tel:+420000000000">+420 000 000 000</a></dd></div>
+        <div><dt>E-mail</dt><dd><a href="mailto:info@example.cz">info@example.cz</a></dd></div>
+        <div><dt>Kde</dt><dd>Brno, přesná adresa po domluvě</dd></div>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© 2026 Husinka · Pouze pro osoby 18+</div></footer>
+
+<script>
+(() => {
+  const c = document.getElementById('skin'), x = c.getContext('2d');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let w, h, dots = [], px = -999, py = -999, dpr = Math.min(devicePixelRatio || 1, 2);
+  function setup(){
+    w = c.clientWidth; h = c.clientHeight; c.width = w*dpr; c.height = h*dpr;
+    x.setTransform(dpr,0,0,dpr,0,0); dots = [];
+    const gap = 22;
+    for (let yy = gap/2; yy < h; yy += gap)
+      for (let xx = gap/2 + (Math.round(yy/gap)%2)*gap/2; xx < w; xx += gap)
+        dots.push({x: xx + (Math.random()-.5)*6, y: yy + (Math.random()-.5)*6, r: 0});
+    if (reduce) draw();
+  }
+  function draw(){
+    x.clearRect(0,0,w,h);
+    for (const d of dots){
+      const dist = Math.hypot(d.x-px, d.y-py);
+      const target = dist < 140 ? (1 - dist/140) * 3.2 : 0;
+      d.r += (target - d.r) * (target > d.r ? .25 : .03);
+      const r = .9 + d.r;
+      x.fillStyle = `rgba(51,65,92,${.12 + d.r*.12})`;
+      x.beginPath(); x.arc(d.x, d.y, r, 0, 6.283); x.fill();
+    }
+    if (!reduce) requestAnimationFrame(draw);
+  }
+  const move = e => { const b = c.getBoundingClientRect(), p = e.touches ? e.touches[0] : e; px = p.clientX-b.left; py = p.clientY-b.top; };
+  c.parentElement.addEventListener('pointermove', move);
+  c.parentElement.addEventListener('touchmove', move, {passive:true});
+  c.parentElement.addEventListener('pointerleave', () => { px = py = -999; });
+  addEventListener('resize', setup);
+  setup(); if (!reduce) draw();
+})();
+</script>
+</body>
+</html>
