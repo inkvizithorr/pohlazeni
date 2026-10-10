@@ -5,32 +5,82 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Husinka – salonek pro hlazení a husí kůži</title>
 <meta name="description" content="Klidný salonek v soukromí. Pomalé hlazení, šimrání a husí kůže místo klasické masáže.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;1,6..72,300&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://pohlazeni-hlazeni.vercel.app/">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#E3E9E1">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:site_name" content="Husinka">
+<meta property="og:url" content="https://pohlazeni-hlazeni.vercel.app/">
+<meta property="og:title" content="Husinka – salonek pro hlazení a husí kůži">
+<meta property="og:description" content="Klidný salonek v soukromí. Pomalé hlazení, šimrání a husí kůže místo klasické masáže.">
+<meta property="og:image" content="https://pohlazeni-hlazeni.vercel.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Husinka – Pomalé hlazení, až naskočí husí kůže.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23E3E9E1'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-style='italic' font-size='38' text-anchor='middle' fill='%2333415C'%3EH%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  "name": "Husinka",
+  "description": "Klidný salonek v soukromí. Pomalé hlazení, šimrání a husí kůže místo klasické masáže.",
+  "url": "https://pohlazeni-hlazeni.vercel.app/",
+  "telephone": "+420728752965",
+  "priceRange": "1 100–1 800 Kč",
+  "currenciesAccepted": "CZK",
+  "address": {"@type": "PostalAddress", "addressLocality": "Brno", "addressCountry": "CZ"},
+  "areaServed": "Brno"
+}
+</script>
+<script>document.documentElement.classList.add("js")</script>
 <style>
+  /* Písmo Newsreader je uložené přímo na webu (rychlejší načtení, nic se neposílá Googlu). */
+  @font-face{font-family:"Newsreader";font-style:normal;font-weight:300 500;font-display:swap;
+    src:url(/fonts/newsreader-latin.woff2) format("woff2");
+    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+  @font-face{font-family:"Newsreader";font-style:normal;font-weight:300 500;font-display:swap;
+    src:url(/fonts/newsreader-latin-ext.woff2) format("woff2");
+    unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+  @font-face{font-family:"Newsreader";font-style:italic;font-weight:300;font-display:swap;
+    src:url(/fonts/newsreader-italic-latin.woff2) format("woff2");
+    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+  @font-face{font-family:"Newsreader";font-style:italic;font-weight:300;font-display:swap;
+    src:url(/fonts/newsreader-italic-latin-ext.woff2) format("woff2");
+    unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
   :root{
     --sage:#E3E9E1; --mist:#F6F7F3; --dusk:#33415C; --apricot:#F0CDB8;
-    --text:#26324A; --muted:#5E6A7E;
+    --text:#26324A; --muted:#566276;
     --font:"Newsreader", Georgia, "Times New Roman", serif;
   }
   *{box-sizing:border-box;margin:0}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
   body{font-family:var(--font);background:var(--mist);color:var(--text);line-height:1.7;font-size:1.15rem;font-weight:300}
   a{color:inherit}
   :focus-visible{outline:2px solid var(--dusk);outline-offset:4px;border-radius:3px}
+  .contact :focus-visible{outline-color:var(--apricot)}
+  .skip{position:absolute;left:1rem;top:-4rem;z-index:10;background:var(--dusk);color:var(--mist);padding:.6rem 1rem;border-radius:2rem;text-decoration:none}
+  .skip:focus{top:1rem}
+  h1,h2,h3{text-wrap:balance}
+  p,li,dd{text-wrap:pretty}
+  section[id]{scroll-margin-top:1rem}
   .wrap{max-width:60rem;margin:0 auto;padding:0 1.5rem}
 
-  header{position:relative;background:var(--sage);min-height:88vh;display:flex;flex-direction:column;overflow:hidden}
+  header{position:relative;background:var(--sage);min-height:88vh;min-height:88svh;display:flex;flex-direction:column;overflow:hidden}
   canvas{position:absolute;inset:0;width:100%;height:100%}
   nav{position:relative;display:flex;justify-content:space-between;align-items:baseline;padding:1.5rem 0}
   .logo{font-style:italic;font-size:1.5rem;text-decoration:none}
-  nav a.book{text-decoration:none;border-bottom:1px solid currentColor}
+  nav a.book{position:relative;text-decoration:none;border-bottom:1px solid currentColor}
+  nav a.book::after{content:"";position:absolute;inset:-.75rem -.5rem}
   .hero{position:relative;margin:auto 0;padding:3rem 0 5rem;pointer-events:none}
   .hero h1{font-weight:300;font-size:clamp(2.5rem,7.5vw,5rem);line-height:1.05;letter-spacing:-.015em;max-width:14ch}
   .hero p{max-width:30rem;margin-top:1.4rem;color:var(--muted)}
   .hero a{pointer-events:auto;display:inline-block;margin-top:2rem;background:var(--dusk);color:var(--mist);text-decoration:none;padding:.8rem 1.5rem;border-radius:2rem;font-weight:500}
-  .hint{position:relative;font-style:italic;color:var(--muted);font-size:.95rem;padding-bottom:1.5rem}
+  .hint{position:relative;user-select:none;font-style:italic;color:var(--muted);font-size:.95rem;padding-bottom:1.5rem}
 
   section{padding:5rem 0}
   h2{font-weight:300;font-size:clamp(1.9rem,4.5vw,2.8rem);line-height:1.1;margin-bottom:1.25rem;max-width:18ch}
@@ -51,61 +101,74 @@
   .contact dt{font-style:italic;color:#C9D0DC;font-size:1rem}
   .contact dd{font-size:clamp(1.3rem,4vw,1.8rem)}
   .contact dd a{text-decoration:none;border-bottom:1px solid var(--apricot)}
+  .contact .wa{display:inline-block;margin-top:.4rem;font-size:1.05rem;color:#C9D0DC;text-decoration:none;border-bottom:1px solid currentColor}
+
+  /* plovoucí tlačítko na mobilu */
+  .float{position:fixed;left:50%;bottom:max(1rem,env(safe-area-inset-bottom));z-index:5;transform:translate(-50%,150%);transition:transform .35s ease;background:var(--dusk);color:var(--mist);text-decoration:none;padding:.8rem 1.6rem;border-radius:2rem;font-weight:500;box-shadow:0 6px 20px rgba(38,50,74,.25);white-space:nowrap}
+  .float.on{transform:translate(-50%,0)}
+  @media (min-width:48rem){.float{display:none}}
+
+  /* jemné objevování sekcí */
+  .js .reveal{opacity:0;transform:translateY(1.2rem);transition:opacity .8s ease,transform .8s ease}
+  .js .reveal.seen{opacity:1;transform:none}
+
+  @media (prefers-reduced-motion: reduce){.hint{display:none}.float{transition:none}.js .reveal{opacity:1;transform:none;transition:none}}
   footer{background:#2A3650;color:#AEB7C6;padding:1.5rem 0;font-size:.95rem}
 </style>
 </head>
 <body>
+<a class="skip" href="#obsah">Přeskočit na obsah</a>
 <header>
   <canvas id="skin" aria-hidden="true"></canvas>
   <div class="wrap" style="position:relative;display:flex;flex-direction:column;flex:1">
-    <nav>
-      <a class="logo" href="#">Husinka</a>
+    <nav aria-label="Hlavní">
+      <a class="logo" href="#" aria-label="Husinka – na začátek stránky">Husinka</a>
       <a class="book" href="#kontakt">Objednat se</a>
     </nav>
     <div class="hero">
       <h1>Pomalé hlazení, až naskočí husí kůže.</h1>
-      <p>Salonek v soukromí pro ty, kdo místo masáže chtějí něžný dotek. Konečky prstů, pírka a štětečky, bez spěchu a v klidu.</p>
+      <p>Salonek v soukromí pro ty, kdo místo masáže chtějí něžný dotek. Konečky prstů, pírka a štětečky, bez spěchu a v klidu.</p>
       <a href="#kontakt">Domluvit termín</a>
     </div>
     <p class="hint">Přejeďte prstem nebo myší přes pozadí.</p>
   </div>
 </header>
 
-<main>
+<main id="obsah">
   <section id="nabidka">
     <div class="wrap">
-      <h2>Co nabízíme</h2>
-      <p class="lead">Každé sezení začíná krátkým rozhovorem, kde se domluvíme, kde a jak se vás můžeme dotýkat.</p>
+      <h2 class="reveal">Co nabízíme</h2>
+      <p class="lead">Každé sezení začíná krátkým rozhovorem, kde se domluvíme, kde a jak se vás můžeme dotýkat.</p>
       <div class="offers">
-        <div class="offer">
-          <h3>Záda a ramena</h3><p class="meta">45 minut</p>
-          <p>Pomalé tahy konečky prstů a nehty po zádech, lopatkách a šíji.</p>
-          <span class="price">1 100 Kč</span>
-        </div>
-        <div class="offer">
+        <article class="offer reveal">
+          <h3>Záda a ramena</h3><p class="meta">45 minut</p>
+          <p>Pomalé tahy konečky prstů a nehty po zádech, lopatkách a šíji.</p>
+          <p class="price">1 100 Kč</p>
+        </article>
+        <article class="offer reveal">
           <h3>Celé tělo</h3><p class="meta">75 minut</p>
-          <p>Ruce, paže, záda, nohy i chodidla. Střídání prstů, peří a měkkých štětců.</p>
-          <span class="price">1 800 Kč</span>
-        </div>
-        <div class="offer">
+          <p>Ruce, paže, záda, nohy i chodidla. Střídání prstů, peří a měkkých štětců.</p>
+          <p class="price">1 800 Kč</p>
+        </article>
+        <article class="offer reveal">
           <h3>Tiché sezení</h3><p class="meta">60 minut</p>
-          <p>Bez mluvení, s tlumeným světlem a klidnou hudbou. Jen dotek a dech.</p>
-          <span class="price">1 500 Kč</span>
-        </div>
+          <p>Bez mluvení, s tlumeným světlem a klidnou hudbou. Jen dotek a dech.</p>
+          <p class="price">1 500 Kč</p>
+        </article>
       </div>
     </div>
   </section>
 
   <section class="quiet" id="pravidla">
-    <div class="wrap cols">
+    <div class="wrap cols reveal">
       <div>
-        <h2>Jak to u nás chodí</h2>
-        <p>Přijdete, převléknete se do pohodlného a lehnete si. Intenzitu, tempo i místa dotyků můžete kdykoli změnit – stačí říct.</p>
+        <h2>Jak to u nás chodí</h2>
+        <p>Přijdete, převléknete se do pohodlného a lehnete si. Intenzitu, tempo i místa dotyků můžete kdykoli změnit – stačí říct.</p>
       </div>
       <ul>
         <li>Pouze pro osoby starší 18 let.</li>
         <li>Vše předem domluvené, sezení lze kdykoli ukončit.</li>
-        <li>Čisté ručníky, prostěradla a pomůcky pro každého.</li>
+        <li>Čisté ručníky, prostěradla a pomůcky pro každého.</li>
         <li>Diskrétní prostředí, adresa až po potvrzení termínu.</li>
       </ul>
     </div>
@@ -113,10 +176,10 @@
 
   <section class="contact" id="kontakt">
     <div class="wrap">
-      <h2>Domluvte si termín</h2>
+      <h2 class="reveal">Domluvte si termín</h2>
       <p class="lead">Napište nebo zavolejte, ozveme se obvykle do několika hodin.</p>
       <dl>
-        <div><dt>Telefon a WhatsApp</dt><dd><a href="tel:+420728752965">+420 728 752 965</a></dd></div>
+        <div><dt>Telefon a WhatsApp</dt><dd><a href="tel:+420728752965">+420 728 752 965</a><br><a class="wa" href="https://wa.me/420728752965">Napsat na WhatsApp</a></dd></div>
         <div><dt>E-mail</dt><dd><a href="mailto:info@example.cz">info@example.cz</a></dd></div>
         <div><dt>Kde</dt><dd>Brno, přesná adresa po domluvě</dd></div>
       </dl>
@@ -124,40 +187,65 @@
   </section>
 </main>
 
+<a class="float" href="#kontakt" aria-hidden="true" tabindex="-1">Domluvit termín</a>
+
 <footer><div class="wrap">© 2026 Husinka · Pouze pro osoby 18+</div></footer>
 
 <script>
 (() => {
-  const c = document.getElementById('skin'), x = c.getContext('2d');
+  const c = document.getElementById('skin'), x = c.getContext('2d'), host = c.parentElement;
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let w, h, dots = [], px = -999, py = -999, dpr = Math.min(devicePixelRatio || 1, 2);
+  let w = 0, h = 0, dots = [], px = -999, py = -999, running = false, dpr = Math.min(devicePixelRatio || 1, 2);
   function setup(){
-    w = c.clientWidth; h = c.clientHeight; c.width = w*dpr; c.height = h*dpr;
+    const nw = c.clientWidth, nh = c.clientHeight;
+    if (nw === w && nh === h) return; // mobil při scrollu mění výšku lišty, tečky nepřegenerovávat
+    w = nw; h = nh; c.width = w*dpr; c.height = h*dpr;
     x.setTransform(dpr,0,0,dpr,0,0); dots = [];
     const gap = 22;
     for (let yy = gap/2; yy < h; yy += gap)
       for (let xx = gap/2 + (Math.round(yy/gap)%2)*gap/2; xx < w; xx += gap)
         dots.push({x: xx + (Math.random()-.5)*6, y: yy + (Math.random()-.5)*6, r: 0});
-    if (reduce) draw();
+    draw();
   }
   function draw(){
     x.clearRect(0,0,w,h);
+    let busy = false;
     for (const d of dots){
       const dist = Math.hypot(d.x-px, d.y-py);
       const target = dist < 140 ? (1 - dist/140) * 3.2 : 0;
       d.r += (target - d.r) * (target > d.r ? .25 : .03);
+      if (Math.abs(target - d.r) > .01) busy = true;
       const r = .9 + d.r;
       x.fillStyle = `rgba(51,65,92,${.12 + d.r*.12})`;
       x.beginPath(); x.arc(d.x, d.y, r, 0, 6.283); x.fill();
     }
-    if (!reduce) requestAnimationFrame(draw);
+    // animace běží jen když se něco hýbe, jinak šetří baterii
+    running = busy && !reduce;
+    if (running) requestAnimationFrame(draw);
   }
-  const move = e => { const b = c.getBoundingClientRect(), p = e.touches ? e.touches[0] : e; px = p.clientX-b.left; py = p.clientY-b.top; };
-  c.parentElement.addEventListener('pointermove', move);
-  c.parentElement.addEventListener('touchmove', move, {passive:true});
-  c.parentElement.addEventListener('pointerleave', () => { px = py = -999; });
+  const wake = () => { if (!running && !reduce) { running = true; requestAnimationFrame(draw); } };
+  const move = e => { const b = c.getBoundingClientRect(), p = e.touches ? e.touches[0] : e; px = p.clientX-b.left; py = p.clientY-b.top; wake(); };
+  const leave = () => { px = py = -999; wake(); };
+  host.addEventListener('pointermove', move);
+  host.addEventListener('touchmove', move, {passive:true});
+  host.addEventListener('pointerleave', leave);
+  host.addEventListener('touchend', leave, {passive:true});
   addEventListener('resize', setup);
-  setup(); if (!reduce) draw();
+  setup();
+})();
+
+(() => {
+  if (!('IntersectionObserver' in window)) { document.querySelectorAll('.reveal').forEach(e => e.classList.add('seen')); return; }
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('seen'); io.unobserve(e.target); } }), {rootMargin: '0px 0px -10% 0px'});
+  document.querySelectorAll('.reveal').forEach(e => io.observe(e));
+
+  // plovoucí tlačítko: ukázat po odscrollování z úvodu, schovat u kontaktu
+  const btn = document.querySelector('.float'), seen = {header: true, kontakt: false};
+  const io2 = new IntersectionObserver(es => {
+    es.forEach(e => seen[e.target.id || 'header'] = e.isIntersecting);
+    btn.classList.toggle('on', !seen.header && !seen.kontakt);
+  });
+  io2.observe(document.querySelector('header')); io2.observe(document.getElementById('kontakt'));
 })();
 </script>
 </body>
