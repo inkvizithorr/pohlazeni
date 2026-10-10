@@ -115,6 +115,14 @@
 
   @media (prefers-reduced-motion: reduce){.hint{display:none}.float{transition:none}.js .reveal{opacity:1;transform:none;transition:none}}
   footer{background:#2A3650;color:#AEB7C6;padding:1.5rem 0;font-size:.95rem}
+  .faq{margin-top:2rem;max-width:44rem}
+  .faq details{border-top:1px solid #C9D2C6}
+  .faq details:last-child{border-bottom:1px solid #C9D2C6}
+  .faq summary{cursor:pointer;list-style:none;padding:1rem 2.5rem 1rem 0;font-weight:500;position:relative}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";position:absolute;right:.25rem;top:.8rem;font-size:1.5rem;font-weight:300;line-height:1}
+  .faq details[open] summary::after{content:"–"}
+  .faq details p{padding:0 0 1.2rem;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -172,6 +180,20 @@
         <li>Čisté ručníky, prostěradla a pomůcky pro každého.</li>
         <li>Diskrétní prostředí, adresa až po potvrzení termínu.</li>
       </ul>
+    </div>
+  </section>
+
+  <section id="otazky">
+    <div class="wrap">
+      <h2>Časté otázky</h2>
+      <div class="faq">
+        <details><summary>Jak sezení probíhá?</summary><p>Přijdete, převléknete se do pohodlného a lehnete si. Na začátku se krátce domluvíme, kde a jak se vás můžeme dotýkat.</p></details>
+        <details><summary>Co když mi něco nebude příjemné?</summary><p>Intenzitu, tempo i místa dotyků můžete kdykoli změnit, stačí říct. Sezení lze kdykoli ukončit.</p></details>
+        <details><summary>Které sezení vybrat?</summary><p>Nejkratší je Záda a ramena (45 minut), nejdelší Celé tělo (75 minut). Tiché sezení je bez mluvení, s tlumeným světlem a klidnou hudbou.</p></details>
+        <details><summary>Jak je to s čistotou?</summary><p>Čisté ručníky, prostěradla a pomůcky má každý zvlášť.</p></details>
+        <details><summary>Kde salonek je?</summary><p>V Brně. Přesnou adresu posíláme až po potvrzení termínu.</p></details>
+        <details><summary>Jak se objednám?</summary><p>Napište SMS, na WhatsApp nebo e-mail, případně zavolejte. Ozveme se obvykle do několika hodin. Salonek je pouze pro osoby starší 18 let.</p></details>
+      </div>
     </div>
   </section>
 
@@ -249,5 +271,6 @@
   io2.observe(document.querySelector('header')); io2.observe(document.getElementById('kontakt'));
 })();
 </script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
