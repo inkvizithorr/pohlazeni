@@ -15,7 +15,11 @@
 <meta property="og:url" content="https://pohlazeni-hlazeni.vercel.app/">
 <meta property="og:title" content="Husinka – salonek pro hlazení a husí kůži">
 <meta property="og:description" content="Klidný salonek v soukromí. Pomalé hlazení, šimrání a husí kůže místo klasické masáže.">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://pohlazeni-hlazeni.vercel.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Husinka – Pomalé hlazení, až naskočí husí kůže.">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23E3E9E1'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-style='italic' font-size='38' text-anchor='middle' fill='%2333415C'%3EH%3C/text%3E%3C/svg%3E">
 <link rel="preload" href="/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
@@ -32,6 +36,7 @@
   "areaServed": "Brno"
 }
 </script>
+<script>document.documentElement.classList.add("js")</script>
 <style>
   /* Písmo Newsreader je uložené přímo na webu (rychlejší načtení, nic se neposílá Googlu). */
   @font-face{font-family:"Newsreader";font-style:normal;font-weight:300 500;font-display:swap;
@@ -96,7 +101,18 @@
   .contact dt{font-style:italic;color:#C9D0DC;font-size:1rem}
   .contact dd{font-size:clamp(1.3rem,4vw,1.8rem)}
   .contact dd a{text-decoration:none;border-bottom:1px solid var(--apricot)}
-  @media (prefers-reduced-motion: reduce){.hint{display:none}}
+  .contact .wa{display:inline-block;margin-top:.4rem;font-size:1.05rem;color:#C9D0DC;text-decoration:none;border-bottom:1px solid currentColor}
+
+  /* plovoucí tlačítko na mobilu */
+  .float{position:fixed;left:50%;bottom:max(1rem,env(safe-area-inset-bottom));z-index:5;transform:translate(-50%,150%);transition:transform .35s ease;background:var(--dusk);color:var(--mist);text-decoration:none;padding:.8rem 1.6rem;border-radius:2rem;font-weight:500;box-shadow:0 6px 20px rgba(38,50,74,.25);white-space:nowrap}
+  .float.on{transform:translate(-50%,0)}
+  @media (min-width:48rem){.float{display:none}}
+
+  /* jemné objevování sekcí */
+  .js .reveal{opacity:0;transform:translateY(1.2rem);transition:opacity .8s ease,transform .8s ease}
+  .js .reveal.seen{opacity:1;transform:none}
+
+  @media (prefers-reduced-motion: reduce){.hint{display:none}.float{transition:none}.js .reveal{opacity:1;transform:none;transition:none}}
   footer{background:#2A3650;color:#AEB7C6;padding:1.5rem 0;font-size:.95rem}
 </style>
 </head>
@@ -121,20 +137,20 @@
 <main id="obsah">
   <section id="nabidka">
     <div class="wrap">
-      <h2>Co nabízíme</h2>
+      <h2 class="reveal">Co nabízíme</h2>
       <p class="lead">Každé sezení začíná krátkým rozhovorem, kde se domluvíme, kde a jak se vás můžeme dotýkat.</p>
       <div class="offers">
-        <article class="offer">
+        <article class="offer reveal">
           <h3>Záda a ramena</h3><p class="meta">45 minut</p>
           <p>Pomalé tahy konečky prstů a nehty po zádech, lopatkách a šíji.</p>
           <p class="price">1 100 Kč</p>
         </article>
-        <article class="offer">
+        <article class="offer reveal">
           <h3>Celé tělo</h3><p class="meta">75 minut</p>
           <p>Ruce, paže, záda, nohy i chodidla. Střídání prstů, peří a měkkých štětců.</p>
           <p class="price">1 800 Kč</p>
         </article>
-        <article class="offer">
+        <article class="offer reveal">
           <h3>Tiché sezení</h3><p class="meta">60 minut</p>
           <p>Bez mluvení, s tlumeným světlem a klidnou hudbou. Jen dotek a dech.</p>
           <p class="price">1 500 Kč</p>
@@ -144,7 +160,7 @@
   </section>
 
   <section class="quiet" id="pravidla">
-    <div class="wrap cols">
+    <div class="wrap cols reveal">
       <div>
         <h2>Jak to u nás chodí</h2>
         <p>Přijdete, převléknete se do pohodlného a lehnete si. Intenzitu, tempo i místa dotyků můžete kdykoli změnit – stačí říct.</p>
@@ -160,16 +176,18 @@
 
   <section class="contact" id="kontakt">
     <div class="wrap">
-      <h2>Domluvte si termín</h2>
+      <h2 class="reveal">Domluvte si termín</h2>
       <p class="lead">Napište nebo zavolejte, ozveme se obvykle do několika hodin.</p>
       <dl>
-        <div><dt>Telefon a WhatsApp</dt><dd><a href="tel:+420728752965">+420 728 752 965</a></dd></div>
+        <div><dt>Telefon a WhatsApp</dt><dd><a href="tel:+420728752965">+420 728 752 965</a><br><a class="wa" href="https://wa.me/420728752965">Napsat na WhatsApp</a></dd></div>
         <div><dt>E-mail</dt><dd><a href="mailto:info@example.cz">info@example.cz</a></dd></div>
         <div><dt>Kde</dt><dd>Brno, přesná adresa po domluvě</dd></div>
       </dl>
     </div>
   </section>
 </main>
+
+<a class="float" href="#kontakt" aria-hidden="true" tabindex="-1">Domluvit termín</a>
 
 <footer><div class="wrap">© 2026 Husinka · Pouze pro osoby 18+</div></footer>
 
@@ -214,6 +232,20 @@
   host.addEventListener('touchend', leave, {passive:true});
   addEventListener('resize', setup);
   setup();
+})();
+
+(() => {
+  if (!('IntersectionObserver' in window)) { document.querySelectorAll('.reveal').forEach(e => e.classList.add('seen')); return; }
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('seen'); io.unobserve(e.target); } }), {rootMargin: '0px 0px -10% 0px'});
+  document.querySelectorAll('.reveal').forEach(e => io.observe(e));
+
+  // plovoucí tlačítko: ukázat po odscrollování z úvodu, schovat u kontaktu
+  const btn = document.querySelector('.float'), seen = {header: true, kontakt: false};
+  const io2 = new IntersectionObserver(es => {
+    es.forEach(e => seen[e.target.id || 'header'] = e.isIntersecting);
+    btn.classList.toggle('on', !seen.header && !seen.kontakt);
+  });
+  io2.observe(document.querySelector('header')); io2.observe(document.getElementById('kontakt'));
 })();
 </script>
 </body>
